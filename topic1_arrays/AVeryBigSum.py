@@ -12,6 +12,8 @@ import sys
 # The function is expected to return a LONG_INTEGER.
 # The function accepts LONG_INTEGER_ARRAY ar as parameter.
 #
+# aVeryBigSumA - using built in sum function
+# aVeryBigSumB - using for loop to iterate through the array and sum the elements
 
 def aVeryBigSumA(ar):
     return sum(ar)
