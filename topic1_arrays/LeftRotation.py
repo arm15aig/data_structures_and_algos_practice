@@ -11,12 +11,17 @@ import sys
 #
 # The function is expected to return an INTEGER_ARRAY.
 # The function accepts following parameters:
-#  1. INTEGER_ARRAY a
-#  2. INTEGER d
+#  1. INTEGER_ARRAY a - array of integers to perform left rotations on
+#  2. INTEGER d - number of left rotations to perform on the array
 #
 
 def rotLeft(a, d):
-    # Write your code here
+    tempArray = []
+    for i in range(d):
+        tempArray.append(a[0])
+        a.pop(0)
+    return a + tempArray
+
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
