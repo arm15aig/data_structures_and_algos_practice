@@ -33,6 +33,15 @@ def print_singly_linked_list(node, sep, fptr):
 #
 #
 def insertNodeAtTail(head, data):
+    newNode = SinglyLinkedListNode(data)
+    if head is None:
+        head = newNode
+        return head
+    currentNode = head
+    while currentNode.next is not None:
+        currentNode = currentNode.next
+    currentNode.next = newNode
+    return head
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
