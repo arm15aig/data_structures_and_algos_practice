@@ -13,8 +13,15 @@ import sys
 # The function accepts LONG_INTEGER_ARRAY ar as parameter.
 #
 
-def aVeryBigSum(ar):
+def aVeryBigSumA(ar):
     return sum(ar)
+
+def aVeryBigSumB(ar):
+    result = 0
+    for i in range(len(ar)):
+        ar[i] = int(ar[i])
+        result += int(ar[i])
+    return result
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
@@ -23,7 +30,8 @@ if __name__ == '__main__':
 
     ar = list(map(int, input().rstrip().split()))
 
-    result = aVeryBigSum(ar)
+    # result = aVeryBigSum(ar)
+    result = aVeryBigSumB(ar)
 
     fptr.write(str(result) + '\n')
 
