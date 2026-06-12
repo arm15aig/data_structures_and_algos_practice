@@ -59,6 +59,18 @@ def has_cycle(head):
 
     return False
 
+def has_cycleA(head):
+    visited = set()
+    current = head
+
+    while current is not None:
+        if current in visited:
+            return True
+        visited.add(current)
+        current = current.next
+
+    return False
+
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
