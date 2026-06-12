@@ -14,8 +14,16 @@ import sys
 #
 
 def isBalanced(s):
-    # Write your code here
-    pass
+    stack = []
+    brackets = {')': '(', '}': '{', ']': '['}
+    for char in s:
+        if char in brackets.values():
+            stack.append(char)
+        elif char in brackets.keys():
+            if not stack or stack[-1] != brackets[char]:
+                return 'NO'
+            stack.pop()
+    return 'YES' if not stack else 'NO'
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
